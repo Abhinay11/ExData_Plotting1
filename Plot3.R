@@ -1,9 +1,9 @@
 dataFile <- "/Users/abhinaykorukonda/Desktop/CourseProject1/household_power_consumption.txt"
 data <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
-sudata <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
+subdata <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
 
 
-datetime <- strptime(paste(sudata$Date, subdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
+datetime <- strptime(paste(subdata$Date, subdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 globalActivePower <- as.numeric(subdata$Global_active_power)
 M1 <- as.numeric(subdata$Sub_metering_1)
 M2 <- as.numeric(subdata$Sub_metering_2)
